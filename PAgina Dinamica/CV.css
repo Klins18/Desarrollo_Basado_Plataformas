@@ -1,0 +1,44 @@
+body {
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+}
+.header {
+	display: table;
+    width: 100%;
+    background:  #4c4c4c;
+    
+}
+
+	.containerh {
+        float: right;
+        width: 67.4%;
+        padding: 5px;
+  		text-align: center;
+  		color: white;
+        font-size: 25px;
+    }
+    .asideh {
+        float: left;
+        width: 25%;
+        padding: 15px;
+    }
+
+.page{
+        display: table;
+        width: 100%
+    }
+    .container {
+        float: right;
+        width: 60%;
+        padding: 20px;
+  		text-align: left;
+        font-size: 11px
+    }
+    .aside{
+        float: left;
+        width: 25%;
+        padding: 20px;
+  		text-align: left;
+        background: #f2f2f2 ;
+        font-size: 12px
+    }
