@@ -4,16 +4,73 @@
     <meta charset="utf-8" />
     <title>DBP</title>
     <style>
-      .task-item {
-        display: flex;
-        align-items: center;
-      }
-      .task-item button {
-        margin-left: 10px;
-      }
-      .task-item .completed {
-        text-decoration: line-through;
-      }
+      body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #333;
+}
+
+#new-task {
+  margin-top: 20px;
+}
+
+#task {
+  padding: 8px;
+  font-size: 16px;
+}
+
+#tasks {
+  list-style-type: none;
+  padding: 0;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.task-item button {
+  margin-left: 10px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.task-item button:hover {
+  background-color: #c82333;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+button#complete-all {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button#complete-all:hover {
+  background-color: #218838;
+}
+
 
     </style>
 
