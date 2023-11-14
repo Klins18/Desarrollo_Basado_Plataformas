@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>DBP</title>
+    <style>
+      .task-item {
+        display: flex;
+        align-items: center;
+      }
+      .task-item button {
+        margin-left: 10px;
+      }
+      .task-item .completed {
+        text-decoration: line-through;
+      }
+
+    </style>
+
+    <script>
+      function selectAllCheckboxes() {
+        var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        for (var i = 0; i < checkboxes.length; i++) {
+          checkboxes[i].checked = true;
+          toggleTaskCompletion(checkboxes[i]);
+        }
+      }
+      function toggleTaskCompletion(checkbox) {
+        var taskText = checkbox.nextElementSibling;
+        if (checkbox.checked) {
+          taskText.classList.add('completed');
+        } else {
+          taskText.classList.remove('completed');
+        }
+      }
+      function removeTask(li) {
+        li.parentNode.removeChild(li);
+      }
+    </script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+   document.querySelector('#new-task').onsubmit = () => {
+
+   const cb = document.createElement("INPUT");
+    cb.setAttribute("type", "checkbox");
+    cb.addEventListener('change', function () {
+            toggleTaskCompletion(this);
+          });
+            const li = document.createElement('li');
+            li.classList.add('task-item');
+            li.appendChild(cb);
+li.innerHTML += document.querySelector('#task').value;
+
+          const removeButton = document.createElement('button');
+          removeButton.textContent = 'x';
+          removeButton.addEventListener('click', () => {
+            removeTask(li);
+          });
+          li.appendChild(removeButton);
+
+            document.querySelector('#tasks').append(li);
+
+            document.querySelector('#task').value = '';
+
+            return false;
+        };
+
+    });
+    </script>
+
+  </head>
+  <body>
+    <p>Computer Science</p>
+<h1>Tasks</h1>
+<form id="new-task">
+        <input id="task" autocomplete="off"
+autofocus placeholder="New Task"
+type="text">
+        <input type="submit">
+    </form>
+    <ol id="tasks">
+    </ol>
+    <button onclick="selectAllCheckboxes()">Complete All</button>
+  </body>
+</html>
