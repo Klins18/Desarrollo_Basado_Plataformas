@@ -1,142 +1,190 @@
 <!DOCTYPE HTML>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>DBP</title>
-    <style>
-      body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
-}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>DBP</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #2c3e50; 
+      color: #000000; 
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
 
-h1 {
-  color: #333;
-}
+    #container {
+      background-color: #34495e; 
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
 
-#new-task {
-  margin-top: 20px;
-}
+    h1 {
+      color: #3498db; 
+    }
 
-#task {
-  padding: 8px;
-  font-size: 16px;
-}
+    #new-task {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-#tasks {
-  list-style-type: none;
-  padding: 0;
-}
+    #task {
+      padding: 8px;
+      font-size: 16px;
+      margin-bottom: 10px;
+      border: 1px solid #3498db; 
+      border-radius: 5px;
+      background-color: #fff; 
+    }
 
-.task-item {
-  display: flex;
-  align-items: center;
-  background-color: #fff;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
+    #tasks {
+      list-style-type: none;
+      padding: 0;
+    }
 
-.task-item button {
-  margin-left: 10px;
-  background-color: #dc3545;
-  color: #fff;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 3px;
-  cursor: pointer;
-}
+    .task-item {
+      display: flex;
+      align-items: center;
+      background-color: #ecf0f1; 
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
 
-.task-item button:hover {
-  background-color: #c82333;
-}
+    .task-item button {
+      margin-left: 10px;
+      background-color: #e74c3c; 
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
 
-.completed {
-  text-decoration: line-through;
-}
+    .task-item button:hover {
+      background-color: #c0392b;
+    }
 
-button#complete-all {
-  margin-top: 10px;
-  padding: 8px 16px;
-  background-color: #28a745;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
+    .completed {
+      text-decoration: line-through;
+    }
 
-button#complete-all:hover {
-  background-color: #218838;
-}
+    button#complete-all,
+    button#unselect-all {
+      margin-top: 10px;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 
+    button#complete-all {
+      background-color: #27ae60; 
+      color: #fff;
+    }
 
-    </style>
+    button#complete-all:hover {
+      background-color: #219d53;
+    }
 
-    <script>
-      function selectAllCheckboxes() {
-        var checkboxes = document.querySelectorAll('input[type="checkbox"]');
-        for (var i = 0; i < checkboxes.length; i++) {
-          checkboxes[i].checked = true;
-          toggleTaskCompletion(checkboxes[i]);
-        }
+    button#unselect-all {
+      background-color: #3498db; 
+      color: #fff;
+    }
+
+    button#unselect-all:hover {
+      background-color: #2980b9;
+    }
+  </style>
+
+  <script>
+    function selectAllCheckboxes() {
+      var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      for (var i = 0; i < checkboxes.length; i++) {
+        checkboxes[i].checked = true;
+        toggleTaskCompletion(checkboxes[i]);
       }
-      function toggleTaskCompletion(checkbox) {
-        var taskText = checkbox.nextElementSibling;
-        if (checkbox.checked) {
-          taskText.classList.add('completed');
-        } else {
-          taskText.classList.remove('completed');
-        }
+    }
+
+    function unselectAllCheckboxes() {
+      var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      for (var i = 0; i < checkboxes.length; i++) {
+        checkboxes[i].checked = false;
+        toggleTaskCompletion(checkboxes[i]);
       }
-      function removeTask(li) {
-        li.parentNode.removeChild(li);
+    }
+
+    function toggleTaskCompletion(checkbox) {
+      var taskText = checkbox.parentNode.querySelector('.task-text');
+      if (checkbox.checked) {
+        taskText.classList.add('completed');
+      } else {
+        taskText.classList.remove('completed');
       }
-    </script>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-   document.querySelector('#new-task').onsubmit = () => {
+    }
 
-   const cb = document.createElement("INPUT");
-    cb.setAttribute("type", "checkbox");
-    cb.addEventListener('change', function () {
-            toggleTaskCompletion(this);
-          });
-            const li = document.createElement('li');
-            li.classList.add('task-item');
-            li.appendChild(cb);
-li.innerHTML += document.querySelector('#task').value;
+    function removeTask(li) {
+      li.parentNode.removeChild(li);
+    }
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelector('#new-task').onsubmit = () => {
+        const cb = document.createElement('INPUT');
+        cb.setAttribute('type', 'checkbox');
+        cb.addEventListener('change', function () {
+          toggleTaskCompletion(this);
+        });
 
-          const removeButton = document.createElement('button');
-          removeButton.textContent = 'x';
-          removeButton.addEventListener('click', () => {
-            removeTask(li);
-          });
-          li.appendChild(removeButton);
+        const li = document.createElement('li');
+        li.classList.add('task-item');
+        li.appendChild(cb);
 
-            document.querySelector('#tasks').append(li);
+        const taskText = document.createElement('span');
+        taskText.classList.add('task-text'); // Agregamos la clase task-text
+        taskText.innerHTML = document.querySelector('#task').value;
+        li.appendChild(taskText);
 
-            document.querySelector('#task').value = '';
+        const removeButton = document.createElement('button');
+        removeButton.textContent = 'x';
+        removeButton.addEventListener('click', () => {
+          removeTask(li);
+        });
+        li.appendChild(removeButton);
 
-            return false;
-        };
+        document.querySelector('#tasks').append(li);
 
+        document.querySelector('#task').value = '';
+
+        return false;
+      };
     });
-    </script>
-
-  </head>
-  <body>
+  </script>
+</head>
+<body>
+  <div id="container">
     <p>Computer Science</p>
-<h1>Tasks</h1>
-<form id="new-task">
-        <input id="task" autocomplete="off"
-autofocus placeholder="New Task"
-type="text">
-        <input type="submit">
+    <h1>Tasks</h1>
+    <form id="new-task">
+      <input
+        id="task"
+        autocomplete="off"
+        autofocus
+        placeholder="New Task"
+        type="text"
+      />
+      <input type="submit" />
     </form>
-    <ol id="tasks">
-    </ol>
+    <ol id="tasks"></ol>
     <button onclick="selectAllCheckboxes()">Complete All</button>
-  </body>
+    <button onclick="unselectAllCheckboxes()">Unselect All</button>
+  </div>
+</body>
 </html>
