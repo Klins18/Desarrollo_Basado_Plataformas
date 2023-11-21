@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TuProyecto.MainPage">
+
+    <StackLayout Padding="20">
+        <Label Text="Nombre completo:" />
+        <Entry Placeholder="Ingrese su nombre" Keyboard="Text" x:Name="NombreEntry" />
+
+        <Label Text="Fecha de Nacimiento:" />
+        <DatePicker x:Name="FechaDatePicker" />
+
+        <Label Text="Correo electrónico:" />
+        <Entry Placeholder="Ingrese su correo electrónico" Keyboard="Email" x:Name="CorreoEntry" />
+
+        <Label Text="Teléfono:" />
+        <Entry Placeholder="Ingrese su número de teléfono" Keyboard="Telephone" x:Name="TelefonoEntry" />
+
+        <Label Text="Dirección:" />
+        <Entry Placeholder="Ingrese su dirección" Keyboard="Text" x:Name="DireccionEntry" />
+
+        <Label Text="Nacionalidad:" />
+        <Picker Title="Seleccione su nacionalidad" x:Name="NacionalidadPicker">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Perú</x:String>
+                    <x:String>Chile</x:String>
+                    <x:String>Brasil</x:String>
+                    <x:String>Ecuador</x:String>
+                    <x:String>Colombia</x:String>
+                    <x:String>México</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Label Text="Nivel de inglés:" />
+        <StackLayout>
+            <RadioButton Text="Básico" x:Name="BasicoRadio" />
+            <RadioButton Text="Intermedio" x:Name="IntermedioRadio" />
+            <RadioButton Text="Avanzado" x:Name="AvanzadoRadio" />
+        </StackLayout>
+
+        <Label Text="Lenguajes de programación:" />
+        <Picker Title="Seleccione sus lenguajes" x:Name="LenguajesPicker" Multiple="True">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>JavaScript</x:String>
+                    <x:String>Python</x:String>
+                    <x:String>Java</x:String>
+                    <x:String>C#</x:String>
+                    <x:String>PHP</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Label Text="Ocupación:" />
+        <Entry Placeholder="Ingrese su ocupación" Keyboard="Text" x:Name="OcupacionEntry" />
+
+        <Label Text="Aptitudes:" />
+        <Entry Placeholder="Ingrese sus aptitudes" Keyboard="Text" x:Name="AptitudesEntry" />
+
+        <Label Text="Habilidades:" />
+        <StackLayout>
+            <CheckBox Text="Creatividad" x:Name="CreatividadCheckbox" />
+            <CheckBox Text="Flexibilidad" x:Name="FlexibilidadCheckbox" />
+            <CheckBox Text="Innovar y crear" x:Name="InnovarCheckbox" />
+        </StackLayout>
+
+        <Label Text="Perfil:" />
+        <Editor Placeholder="Ingrese su perfil" x:Name="PerfilEditor" />
+
+        <Button Text="Enviar" Clicked="EnviarButton_Clicked" />
+    </StackLayout>
+</ContentPage>
