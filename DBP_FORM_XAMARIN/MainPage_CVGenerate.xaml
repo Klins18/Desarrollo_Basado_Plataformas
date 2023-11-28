@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="YourNamespace.MainPage">
+
+    <StackLayout>
+        <!-- Header -->
+        <StackLayout BackgroundColor="#4c4c4c" Orientation="Horizontal">
+            <StackLayout HorizontalOptions="StartAndExpand">
+                <Image Source="tu_imagen.png" HeightRequest="180" WidthRequest="180"/>
+            </StackLayout>
+            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <Label Text="asd" FontSize="25" TextColor="White"/>
+                <Label Text="PUESTO OCUPADO / BUSCADO" FontSize="20" TextColor="White"/>
+            </StackLayout>
+        </StackLayout>
+
+        <!-- Contenido de la página -->
+        <ScrollView>
+            <StackLayout Padding="20">
+                <!-- Información personal -->
+                <Label Text="CONTACTO" FontSize="20" FontAttributes="Bold"/>
+                <Label Text="🕻 8888"/>
+                <Label Text="✉ asd@sad"/>
+                <Label Text="⏵ asd"/>
+                <Label Text="🅻 linkedin.com/jose-martinez"/>
+
+                <!-- Idiomas -->
+                <Label Text="IDIOMAS" FontSize="20" FontAttributes="Bold"/>
+                <Label Text="Español: Nativo"/>
+                <Label Text="Inglés: {INGLES}"/>
+                <Label Text="Francés: {FRANCES}"/>
+
+                <!-- Aptitudes -->
+                <Label Text="APTITUDES" FontSize="20" FontAttributes="Bold"/>
+                <Label Text="{APTITUDES_1}"/>
+                <Label Text="{APTITUDES_2}"/>
+                <Label Text="{APTITUDES_3}"/>
+                <Label Text="{APTITUDES_4}"/>
+                <Label Text="{APTITUDES_5}"/>
+
+                <!-- Habilidades -->
+                <Label Text="HABILIDADES" FontSize="20" FontAttributes="Bold"/>
+                <Label Text="{HABILIDADES_1}"/>
+                <Label Text="{HABILIDADES_2}"/>
+                <Label Text="{HABILIDADES_3}"/>
+                <Label Text="{HABILIDADES_4}"/>
+
+                <!-- Otros intereses -->
+                <Label Text="OTROS INTERESES" FontSize="20" FontAttributes="Bold"/>
+                <Label Text="{INTERESES_1}"/>
+                <Label Text="{INTERESES_2}"/>
+                <Label Text="{INTERESES_3}"/>
+
+                <!-- Perfil -->
+                <Label Text="PERFIL" FontSize="20" FontAttributes="Bold"/>
+                <Label Text="{PERFIL}"/>
+
+                <!-- Experiencia laboral -->
+                <Label Text="EXPERIENCIA LABORAL" FontSize="20" FontAttributes="Bold"/>
+                <Label Text="{EXP_1_PUESTO}" FontSize="18" FontAttributes="Bold"/>
+                <Label Text="{EXP_1_CIUDAD} | {EXP_1_FECHA}"/>
+                <Label Text="{EXP_1_DESCRIPCION_1}"/>
+                <Label Text="{EXP_1_DESCRIPCION_2}"/>
+                <Label Text="{EXP_1_DESCRIPCION_3}"/>
+                <Label Text="{EXP_1_DESCRIPCION_4}"/>
+                <Label Text="{EXP_1_DESCRIPCION_5}"/>
+                
+                <Label Text="{EXP_2_PUESTO}" FontSize="18" FontAttributes="Bold"/>
+                <Label Text="{EXP_2_CIUDAD} | {EXP_2_FECHA}"/>
+                <Label Text="{EXP_2_DESCRIPCION_1}"/>
+                <Label Text="{EXP_2_DESCRIPCION_2}"/>
+                <Label Text="{EXP_2_DESCRIPCION_3}"/>
+                <Label Text="{EXP_2_DESCRIPCION_4}"/>
+
+                <Label Text="{EXP_3_PUESTO}" FontSize="18" FontAttributes="Bold"/>
+                <Label Text="{EXP_3_CIUDAD} | {EXP_3_FECHA}"/>
+                <Label Text="{EXP_3_DESCRIPCION_1}"/>
+                <Label Text="{EXP_3_DESCRIPCION_2}"/>
+                <Label Text="{EXP_3_DESCRIPCION_3}"/>
+
+                <!-- Formación -->
+                <Label Text="FORMACIÓN" FontSize="20" FontAttributes="Bold"/>
+                <Label Text="{FORMACION_1_TITULO}" FontSize="18" FontAttributes="Bold"/>
+                <Label Text="{FORMACION_1_CIUDAD} | {FORMACION_1_FECHA}"/>
+                
+                <Label Text="{FORMACION_2_TITULO}" FontSize="18" FontAttributes="Bold"/>
+                <Label Text="{FORMACION_2_CIUDAD} | {FORMACION_2_FECHA}"/>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>
