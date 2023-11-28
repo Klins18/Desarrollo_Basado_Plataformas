@@ -1,74 +1,101 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TuProyecto.MainPage">
+             x:Class="DBP.MainPage">
 
-    <StackLayout Padding="20">
-        <Label Text="Nombre completo:" />
-        <Entry Placeholder="Ingrese su nombre" Keyboard="Text" x:Name="NombreEntry" />
+	<StackLayout Padding="20" BackgroundColor="#f2f2f2" Spacing="20" VerticalOptions="CenterAndExpand">
+		<Label Text="Formulario de CV" FontSize="Large" HorizontalOptions="Center" />
 
-        <Label Text="Fecha de Nacimiento:" />
-        <DatePicker x:Name="FechaDatePicker" />
+		<StackLayout>
+			<Label Text="Nombre completo:" FontSize="Medium" />
+			<Entry x:Name="NombreEntry" Placeholder="Enter your name" />
+		</StackLayout>
 
-        <Label Text="Correo electrónico:" />
-        <Entry Placeholder="Ingrese su correo electrónico" Keyboard="Email" x:Name="CorreoEntry" />
+		<StackLayout>
+			<Label Text="Fecha de Nacimiento:" FontSize="Medium" />
+			<DatePicker x:Name="FechaDatePicker" />
+		</StackLayout>
 
-        <Label Text="Teléfono:" />
-        <Entry Placeholder="Ingrese su número de teléfono" Keyboard="Telephone" x:Name="TelefonoEntry" />
+		<StackLayout>
+			<Label Text="Correo electrónico:" FontSize="Medium" />
+			<Entry x:Name="CorreoEntry" Placeholder="Enter your email" Keyboard="Email" />
+		</StackLayout>
 
-        <Label Text="Dirección:" />
-        <Entry Placeholder="Ingrese su dirección" Keyboard="Text" x:Name="DireccionEntry" />
+		<StackLayout>
+			<Label Text="Teléfono:" FontSize="Medium" />
+			<Entry x:Name="TelefonoEntry" Placeholder="Enter your phone number" Keyboard="Telephone" />
+		</StackLayout>
 
-        <Label Text="Nacionalidad:" />
-        <Picker Title="Seleccione su nacionalidad" x:Name="NacionalidadPicker">
-            <Picker.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                    <x:String>Perú</x:String>
-                    <x:String>Chile</x:String>
-                    <x:String>Brasil</x:String>
-                    <x:String>Ecuador</x:String>
-                    <x:String>Colombia</x:String>
-                    <x:String>México</x:String>
-                </x:Array>
-            </Picker.ItemsSource>
-        </Picker>
+		<StackLayout>
+			<Label Text="Dirección:" FontSize="Medium" />
+			<Entry x:Name="DireccionEntry" Placeholder="Enter your address" />
+		</StackLayout>
 
-        <Label Text="Nivel de inglés:" />
-        <StackLayout>
-            <RadioButton Text="Básico" x:Name="BasicoRadio" />
-            <RadioButton Text="Intermedio" x:Name="IntermedioRadio" />
-            <RadioButton Text="Avanzado" x:Name="AvanzadoRadio" />
-        </StackLayout>
+		<StackLayout>
+			<Label Text="Nacionalidad:" FontSize="Medium" />
+			<Picker x:Name="NacionalidadPicker">
+				<Picker.ItemsSource>
+					<x:Array Type="{x:Type x:String}">
+						<x:String>Perú</x:String>
+						<x:String>Chile</x:String>
+						<x:String>Brasil</x:String>
+						<x:String>Ecuador</x:String>
+						<x:String>Colombia</x:String>
+						<x:String>México</x:String>
+					</x:Array>
+				</Picker.ItemsSource>
+			</Picker>
+		</StackLayout>
 
-        <Label Text="Lenguajes de programación:" />
-        <Picker Title="Seleccione sus lenguajes" x:Name="LenguajesPicker" Multiple="True">
-            <Picker.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                    <x:String>JavaScript</x:String>
-                    <x:String>Python</x:String>
-                    <x:String>Java</x:String>
-                    <x:String>C#</x:String>
-                    <x:String>PHP</x:String>
-                </x:Array>
-            </Picker.ItemsSource>
-        </Picker>
+		<StackLayout>
+			<Label Text="Nivel de inglés:" FontSize="Medium" />
+			<StackLayout Orientation="Horizontal">
+				<RadioButton x:Name="BasicoRadio" Content="Básico" />
+				<RadioButton x:Name="IntermedioRadio" Content="Intermedio" />
+				<RadioButton x:Name="AvanzadoRadio" Content="Avanzado" />
+			</StackLayout>
+		</StackLayout>
 
-        <Label Text="Ocupación:" />
-        <Entry Placeholder="Ingrese su ocupación" Keyboard="Text" x:Name="OcupacionEntry" />
+		<StackLayout>
+			<Label Text="Lenguajes de programación:" FontSize="Medium" />
+			<Picker x:Name="LenguajesPicker" SelectionMode="Multiple">
+				<Picker.ItemsSource>
+					<x:Array Type="{x:Type x:String}">
+						<x:String>JavaScript</x:String>
+						<x:String>Python</x:String>
+						<x:String>Java</x:String>
+						<x:String>C#</x:String>
+						<x:String>PHP</x:String>
+					</x:Array>
+				</Picker.ItemsSource>
+			</Picker>
+		</StackLayout>
 
-        <Label Text="Aptitudes:" />
-        <Entry Placeholder="Ingrese sus aptitudes" Keyboard="Text" x:Name="AptitudesEntry" />
+		<StackLayout>
+			<Label Text="Ocupación:" FontSize="Medium" />
+			<Entry x:Name="OcupacionEntry" Placeholder="Enter your occupation" />
+		</StackLayout>
 
-        <Label Text="Habilidades:" />
-        <StackLayout>
-            <CheckBox Text="Creatividad" x:Name="CreatividadCheckbox" />
-            <CheckBox Text="Flexibilidad" x:Name="FlexibilidadCheckbox" />
-            <CheckBox Text="Innovar y crear" x:Name="InnovarCheckbox" />
-        </StackLayout>
+		<StackLayout>
+			<Label Text="Aptitudes:" FontSize="Medium" />
+			<Entry x:Name="AptitudesEntry" Placeholder="Enter your aptitudes" />
+		</StackLayout>
 
-        <Label Text="Perfil:" />
-        <Editor Placeholder="Ingrese su perfil" x:Name="PerfilEditor" />
+		<StackLayout>
+			<Label Text="Habilidades:" FontSize="Medium" />
+			<StackLayout>
+				<CheckBox x:Name="CreatividadCheckbox" Text="Creatividad" />
+				<CheckBox x:Name="FlexibilidadCheckbox" Text="Flexibilidad" />
+				<CheckBox x:Name="InnovarCheckbox" Text="Innovar y crear" />
+			</StackLayout>
+		</StackLayout>
 
-        <Button Text="Enviar" Clicked="EnviarButton_Clicked" />
-    </StackLayout>
+		<StackLayout>
+			<Label Text="Perfil:" FontSize="Medium" />
+			<Editor x:Name="PerfilEditor" HeightRequest="60" />
+		</StackLayout>
+
+		<Button Text="Enviar" BackgroundColor="#4CAF50" TextColor="White" Clicked="EnviarButton_Clicked" />
+	</StackLayout>
+
 </ContentPage>
